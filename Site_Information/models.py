@@ -4,12 +4,13 @@ class Site_Info(models.Model):
     section_about_title = models.CharField(max_length=255)
     section_service_title = models.CharField(max_length=255)
     section_choose_title = models.CharField(max_length=255)
+    section_contact_title = models.CharField(max_length=255)
     section_project_title = models.CharField(max_length=255)
     section_appoint_title = models.CharField(max_length=255)
     section_members_title = models.CharField(max_length=255)
     section_testimony_title = models.CharField(max_length=255)
     phone_number = models.CharField(max_length=20)
-    location = models.URLField(max_length=255)
+    location = models.URLField(max_length=500)
     site_email = models.EmailField(max_length=254)
     site_address  = models.CharField(max_length=255)
     site_name = models.CharField(max_length=255)
@@ -58,7 +59,13 @@ class Choose(models.Model):
 
     def __str__(self):
         return self.description
+    
+class Social(models.Model):     
+    icon = models.CharField(max_length=255)
+    link = models.URLField()
 
+    def __str__(self):
+        return self.icon
 
 
 

@@ -63,7 +63,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <h4 class="section-title">About Us</h4>
-                    <h1 class="display-5 mb-4">A Creative Architecture Agency For Your Dream Home</h1>
+                    <h1 class="display-5 mb-4">{{ site.section_about_title }}</h1>
                     <p>{{ about.description }}</p>
                     <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p>
                     <div class="d-flex align-items-center mb-5">
@@ -89,7 +89,7 @@
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h4 class="section-title">Our Services</h4>
-                <h1 class="display-5 mb-4">We Focused On Modern Architecture And Interior Design</h1>
+                <h1 class="display-5 mb-4">{{ site.section_service_title }}</h1>
             </div>
             <div class="row g-4">
                 {% for item in service %}
@@ -119,7 +119,7 @@
             {% for item in choose %}
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <h4 class="section-title">Why Choose Us!</h4>
-                    <h1 class="display-5 mb-4">Why You Should Trust Us? Learn More About Us!</h1>
+                    <h1 class="display-5 mb-4">{{ site.section_choose_title }}</h1>
                     <p class="mb-4">{{ item.description}}</p>
                     
                     <div class="row g-4">
@@ -137,12 +137,15 @@
                     </div>
                 </div>
             {% endfor %}
+            
+            {% for item in about_full %}
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="feature-img">
-                        <img class="img-fluid" src=" {% static 'design/img/about-2.jpg' %}" alt=" ">
-                        <img class="img-fluid" src=" {% static 'design/img/about-1.jpg' %}" alt=" ">
+                        <img class="img-fluid" src=" {{ item.image1.url }} " alt=" ">
+                        <img class="img-fluid" src=" {{ item.image2.url }}" alt=" ">
                     </div>
                 </div>
+            {% endfor %}
             </div>
         </div>
     </div>
@@ -154,7 +157,7 @@
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h4 class="section-title">Our Projects</h4>
-                <h1 class="display-5 mb-4">Visit Our Latest Projects And Our Innovative Works</h1>
+                <h1 class="display-5 mb-4">{{ site.section_project_title}}</h1>
             </div>
             
             <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
@@ -212,11 +215,11 @@
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h4 class="section-title">Team Members</h4>
-                <h1 class="display-5 mb-4">We Are Creative Architecture Team For Your Dream Home</h1>
+                <h1 class="display-5 mb-4">{{ site.section_members_title }}</h1>
             </div>
         
             <div class="row g-0 team-items">
-                {% for members in team %}  
+                {% for members in team|slice:':4' %}  
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                   <div class="team-item position-relative">
                     <div class="position-relative">
@@ -248,7 +251,7 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <h4 class="section-title">Appointment</h4>
-                    <h1 class="display-5 mb-4">Make An Appointment To Start Your Dream Project</h1>
+                    <h1 class="display-5 mb-4">{{ site.section_appoint_title }}</h1>
                     <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
                     <div class="row g-4">
                         <div class="col-12">
@@ -258,7 +261,7 @@
                                 </div>
                                 <div class="ms-4">
                                     <p class="mb-2">Call Us Now</p>
-                                    <h3 class="mb-0">+012 345 6789</h3>
+                                    <h3 class="mb-0">{{ site.phone_number }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -269,7 +272,7 @@
                                 </div>
                                 <div class="ms-4">
                                     <p class="mb-2">Mail Us Now</p>
-                                    <h3 class="mb-0">info@example.com</h3>
+                                    <h3 class="mb-0">{{ site.site_email }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -327,14 +330,14 @@
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h4 class="section-title">Testimonial</h4>
-                <h1 class="display-5 mb-4">Thousands Of Customers Who Trust Us And Our Services</h1>
+                <h1 class="display-5 mb-4">{{ site.section_testimony_title }}</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 {% for item in test %}
                 <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src=' {{ item.images.url }} ' alt=''>">
                     <p class="fs-5"> {{ item.description }}</p>
                     <h3>{{ item.client_name }}</h3>
-                    <span class="text-primary">{{ item.Profession }}</span>
+                    <span class="text-primary">{{ item.profession }}</span>
                 </div>
                 {% endfor %}
             </div>     

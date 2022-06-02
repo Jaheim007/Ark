@@ -1,6 +1,3 @@
-from email.mime import image
-from turtle import title
-from xml.parsers.expat import model
 from django.db import models
 
 class Service(models.Model):

@@ -26,33 +26,17 @@
     <div class="container-xxl py-5">
         <div class="container pt-5">
             <div class="row g-4">
+                {% for item in info %} 
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="fact-item text-center bg-light h-100 p-5 pt-0">
                         <div class="fact-icon">
-                            <img src="{% static 'design/img/icons/icon-2.png'%}" alt="Icon">
+                            <img src=" {{ item.image.url }} " alt="Icon">
                         </div>
-                        <h3 class="mb-3">Design Approach</h3>
-                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                        <h3 class="mb-3"> {{ item.title }}</h3>
+                        <p class="mb-0"> {{ item.description }} </p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="fact-item text-center bg-light h-100 p-5 pt-0">
-                        <div class="fact-icon">
-                            <img src="{% static 'design/img/icons/icon-3.png'%}" alt="Icon">
-                        </div>
-                        <h3 class="mb-3">Innovative Solutions</h3>
-                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="fact-item text-center bg-light h-100 p-5 pt-0">
-                        <div class="fact-icon">
-                            <img src="{% static 'design/img/icons/icon-4.png' %}" alt="Icon">
-                        </div>
-                        <h3 class="mb-3">Project Management</h3>
-                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -67,72 +51,19 @@
                 <h1 class="display-5 mb-4">We Focused On Modern Architecture And Interior Design</h1>
             </div>
             <div class="row g-4">
+                {% for item in service %}
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item d-flex position-relative text-center h-100">
-                        <img class="bg-img" src="{% static 'design/img/service-1.jpg'%}" alt="">
+                        <img class="bg-img" src="{{ item.image.url }} " alt="">
                         <div class="service-text p-5">
-                            <img class="mb-4" src="{% static 'design/img/icons/icon-5.png'%}" alt="Icon">
-                            <h3 class="mb-3">Architecture</h3>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                            <img class="mb-4" src="{{ item.logo.url }}  " alt="Icon">
+                            <h3 class="mb-3">{{ item.title }} </h3>
+                            <p class="mb-4">{{ item.description }} </p>
                             <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex position-relative text-center h-100">
-                        <img class="bg-img" src="{% static 'design/img/service-2.jpg' %}" alt="">
-                        <div class="service-text p-5">
-                            <img class="mb-4" src="{% static 'design/img/icons/icon-6.png' %}" alt="Icon">
-                            <h3 class="mb-3">3D Animation</h3>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item d-flex position-relative text-center h-100">
-                        <img class="bg-img" src="{% static 'design/img/service-3.jpg'%}" alt="">
-                        <div class="service-text p-5">
-                            <img class="mb-4" src="{% static 'design/img/icons/icon-7.png'%}" alt="Icon">
-                            <h3 class="mb-3">House Planning</h3>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex position-relative text-center h-100">
-                        <img class="bg-img" src="{% static 'design/img/service-4.jpg'%}" alt="">
-                        <div class="service-text p-5">
-                            <img class="mb-4" src="{% static 'design/img/icons/icon-8.png'%}" alt="Icon">
-                            <h3 class="mb-3">Interior Design</h3>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex position-relative text-center h-100">
-                        <img class="bg-img" src="{% static 'design/img/service-5.jpg'%}" alt="">
-                        <div class="service-text p-5">
-                            <img class="mb-4" src="{% static 'design/img/icons/icon-9.png'%}" alt="Icon">
-                            <h3 class="mb-3">Renovation</h3>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item d-flex position-relative text-center h-100">
-                        <img class="bg-img" src="{% static 'design/img/service-6.jpg'%}" alt="">
-                        <div class="service-text p-5">
-                            <img class="mb-4" src="{% static 'design/img/icons/icon-10.png'%}" alt="Icon">
-                            <h3 class="mb-3">Construction</h3>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -147,22 +78,14 @@
                 <h1 class="display-5 mb-4">Thousands Of Customers Who Trust Us And Our Services</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='{% static 'design/img/testimonial-1.jpg' %}' alt=''>">
-                    <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h3>Client Name</h3>
-                    <span class="text-primary">Profession</span>
+                {% for item in test %}
+                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src=' {{ item.images.url }} ' alt=''>">
+                    <p class="fs-5"> {{ item.description }}</p>
+                    <h3>{{ item.client_name }}</h3>
+                    <span class="text-primary">{{ item.profession }}</span>
                 </div>
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='{% static 'design/img/testimonial-2.jpg' %}' alt=''>">
-                    <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h3>Client Name</h3>
-                    <span class="text-primary">Profession</span>
-                </div>
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='{% static 'design/img/testimonial-3.jpg' %}' alt=''>">
-                    <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h3>Client Name</h3>
-                    <span class="text-primary">Profession</span>
-                </div>
-            </div>      
+                {% endfor %}
+            </div>     
         </div>
     </div>
     <!-- Testimonial End -->
